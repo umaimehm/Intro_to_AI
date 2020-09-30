@@ -7,6 +7,7 @@
 <p>2.You will be given access to <a href="http://www.bineric.com/">www.bineric.com</a> This is an external data labeling site. You will have to label some data.<br />Instructions on using Bineric:</p>
 <ul>
 <li>Sign up using your university email address</li>
+<li>Data Labeling is mandatory for everyone. Even if you are in a group, you are still supposed to do data labeling.</li>
 <li>We have estimated that the data labeling should not take more than 30 minutes.</li>
 <li>This is an easy part of the assignment. The goal here is to give you an idea on how data labeling is done in real life.</li>
 <li>The task assignment (Covid19 data labeling: From a set of images identify the infected images) is meant to show you how AI is used in health. This is a harder task to solve, since only health people diagnose and label Xrays. Therefore its not important that you get the right result for this data set. The important thing is that you go through the data set and get an idea on how data labeling is done practically in health.</li>
