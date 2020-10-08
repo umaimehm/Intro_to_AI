@@ -7,11 +7,12 @@ Naive Bayes Applications<br />
 2) Spam Filtering 
 3) Weather Forecast 
 4) Medical Diagnosis <br />
-We will follow these steps in this example <br />
+We will follow these steps in this example <br /> <br />
+
 1)In this example we will use Naive bayes Alogorithm to Spam Filtering over spam email dataset.<br /><br />
 
 2)We will try to train our model to recognize spam emails from the dataset.<br /><br />
 
 3)Machine Learning models Only understand numbers, We will look into technioques that can be used to transform textual data into numbers.<br /><br />
 
-4)We will test our trained model and evaluate the accuracy!<br /><br />
+4)We will test our trained model and evaluate the accuracy!
