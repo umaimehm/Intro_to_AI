@@ -3,7 +3,7 @@ For more details on Naive Bayes Classifiers and its details.
  https://www.quora.com/What-is-the-difference-between-the-the-Gaussian-Bernoulli-Multinomial-and-the-regular-Naive-Bayes-algorithms
 
  In this example we will use Naive bayes Alogorithm to check Accuracy of Naive Bayes Algorithm over ADULT dataset.We will follow these steps in this example
-1)Firsly we will load dataset and drops unrelated columns from dataset 
+1)Firsly we will load dataset and drops unrelated columns from dataset. 
 2)Next we will Defining features and output.
 3)Afterwards we Spliting dataset into training and testing data.We will splits the dataset into 80% train data and 20% test data. After that we are going to train the model from this training data and once the model is trained then we test it on the testing data.
 4) We will import the Naive Bayes Algorithm from the sklearn library. After that, we have trained our model on the training data( 80% of the total dataset which we split earlier) and the final step is to make predictions on the dataset using testing data(20% of the total dataset).
