@@ -6,7 +6,7 @@ Naive Bayes Applications<br />
 1) Real-time prediction 
 2) Spam Filtering 
 3) Weather Forecast 
-4) Medical Diagnosis <br />
+4) Medical Diagnosis <br /> <br />
 We will follow these steps in this example <br /> <br />
 
 1)In this example we will use Naive bayes Alogorithm to Spam Filtering over spam email dataset.<br /><br />
