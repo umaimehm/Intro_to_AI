@@ -1,8 +1,8 @@
 Naive bayes algori uses bayes theorm for conditional probability with a naive assumption that the features are not correlated to each other and tries to find conditional probability of target variable given the probabilities of features. We will use adult dataset here and using naive bayes classifier find out accuracy of income of adults. We use sklearn library and python for this machine learning. MultinomialNB is the classifier we use to train our model. There are other classifiers such as GaussianNB.
-For more details on Naive Bayes Classifiers and its details.
+For more details on Naive Bayes Classifiers and its details.\
  https://www.quora.com/What-is-the-difference-between-the-the-Gaussian-Bernoulli-Multinomial-and-the-regular-Naive-Bayes-algorithms
 
- In this example we will use Naive bayes Alogorithm to check Accuracy of Naive Bayes Algorithm over ADULT dataset.We will follow these steps in this example
+ In this example we will use Naive bayes Alogorithm to check Accuracy of Naive Bayes Algorithm over ADULT dataset.We will follow these steps in this example.\
 1)Firsly we will load dataset and drops unrelated columns from dataset. 
 2)Next we will Defining features and output.
 3)Afterwards we Spliting dataset into training and testing data.We will splits the dataset into 80% train data and 20% test data. After that we are going to train the model from this training data and once the model is trained then we test it on the testing data.
