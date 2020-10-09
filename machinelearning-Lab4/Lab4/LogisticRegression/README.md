@@ -37,7 +37,8 @@ Independent variables -  predictors <br>
 This task shows you how to implement Logictic Regression.
 Implemention of Logistic Regression using Titanic_Survival.csv dataset. The dataset is already provided on GitHub. <br>
 1. Titanic_LogisticRegression.ipynb - It contains all the code for implementing Logistic Regression on Titanic Dataset. <br>
-2. LogisticRegression_Titanic_Dataset.mp4 - The detailed tutorial video explaning the above dataset and how to perform LogisticRegression.<br>
+2. LogisticRegression_Titanic_Dataset.mp4 - https://web.microsoftstream.com/video/a6c6264c-9f10-4e23-a925-c61dee90e9f3 <br>
+The detailed tutorial video explaning the above dataset and how to perform LogisticRegression.<br>
 
 
 ### 2. Task 2: <br>
