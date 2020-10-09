@@ -1,4 +1,4 @@
-# Lab2_LogisticRegression
+# Lab4_LogisticRegression
 
 ### What is Logistic regression in python? <br> 
 It is a technique to analyse a data-set which has a dependent variable and one or more independent variables to predict the outcome in a binary variable, meaning it will have only two outcomes. <br>
