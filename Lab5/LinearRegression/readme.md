@@ -16,7 +16,7 @@ We will follow these steps in this simple task
 
 3) In Step 3 we will Create linear regression object and pass 2 arguments as input and icome to its Fit() function. In other words we will use training data that has years and corresponding income and train a linear regression model using sklearn linear regression class.
 
-4) In next step we will Visual Represention of linear equation with Linear Regression.
+4) In next step we will analyse Visual Represention of Linear Regression with matplotlib.
 
 5) We will predict the per capita income using predict() function. 
 
