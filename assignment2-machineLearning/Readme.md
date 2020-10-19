@@ -1,4 +1,4 @@
-Assignment 2: Machine Learning
+# Assignment 2: Machine Learning
 
 
 You have 10 days to work on a machine learning algorithm.
@@ -22,6 +22,4 @@ Data file: NAS.csv
 
 2. Predict passenger data for Ruter
 Use the same data set given to you in assignment 1. I want you to make a prediction algorithm which predicts the number of passengers on a specific date for a specific bus (pick any one). Input should be date and output will be number of passengers
-You should also show the  predction percentage score.
-
-Data file: Ruter_data.csv
+You should also show the  predction percentage score. Data file: Ruter_data.csv
