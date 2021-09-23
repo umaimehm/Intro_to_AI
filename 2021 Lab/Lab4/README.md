@@ -133,6 +133,9 @@ df = pd.DataFrame(x)
 #But we want to just have a numeric id for now, since it will help us later.
 ```
 
+Output
+![scaling][scale1]
+
 If you want to unscale, do:
 
 ```python
@@ -142,6 +145,7 @@ df = pd.DataFrame(x)
 df.head()
 ```
 
+![scaling][scale2]
 Tip: If you put the scaled dataset in df2, you can compare them easy.
 
 </details>
@@ -206,7 +210,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [scatter2]: img/scatter2.png
 [scatter3]: img/scatter3.png
 [scatterall]: img/scatterall.png
-
+[scale1]: img/scale1.png
+[scale2]: img/scale2.png
 <!-- documentation -->
 [pandas-doc]: https://pandas.pydata.org/docs/reference/index.html#api
 [numpy-doc]: https://numpy.org/doc/stable/
