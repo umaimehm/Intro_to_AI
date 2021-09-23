@@ -167,10 +167,11 @@ plt.show()
 
 <details>
   <summary>Show output</summary>
-
-![scatter-all][scatterall]
-
+  
+![scatter-combo][scatterall]
+  
   </details>
+  
 
 ## More hints
 
@@ -205,7 +206,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [scatter1]: img/scatter1.png
 [scatter2]: img/scatter2.png
 [scatter3]: img/scatter3.png
-[scatterall]: img/scatterall.png
+[scatterall]: img/scatterall.PNG
 
 <!-- documentation -->
 [pandas-doc]: https://pandas.pydata.org/docs/reference/index.html#api
