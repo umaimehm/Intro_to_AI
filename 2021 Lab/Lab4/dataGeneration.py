@@ -6,8 +6,11 @@ Created on Thu Sep 23 10:11:55 2021
 """
 
 import random
-print("Var1,Var2,Var3,Var4,Var5,Var6,Result")
-for i in range(100):
+
+file1 = open("data.csv","w")
+
+file1.write("Var1,Var2,Var3,Var4,Var5,Var6,Result\n")
+for i in range(1000):
     x = random.randint(0, 100)
     y = random.randint(34, 94)
     week = random.randint(0,6)
@@ -18,6 +21,7 @@ for i in range(100):
     
     ans = ((x*y-hour+30*week) + x+2*y)/100
     
-    print(f"{x},{fillerData2},{y},{fillerData},{week},{hour},{ans}")
+    file1.write(f"{x},{fillerData2},{y},{fillerData},{week},{hour},{ans}\n")
 
 
+file1.close() #to change file access modes

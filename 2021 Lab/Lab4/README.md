@@ -96,15 +96,58 @@ plt.show()
 #Another style of corr plot
 corrMatrix.style.background_gradient(cmap='coolwarm')
 ```
-From the matrix, we can see that Var1 and Result is highly correlated. We can also see that Var3 has a correlation.
+*Check out [this page][cmap] for other cmap (color maps) for the plot.*
+
+From the matrix, we can see that Var1 and Result is highly correlated. We can also see that Var3 might have a correlation.
 
 ![corrplot][corr]
 
 
 </details>
 
+We can also look at the correlation with scatterplots:
+This is the column with the highest correlation with Result plotted against it:
+![scatter-plot][scatter1]
+
+We can also plot more columns together, like this:
+
+![scatter-combo][scatter2]
+
+As we can see from this plot, different columns have different min/max values. To solve this we need to scale the columns to a given interval.
+This can be done by importing sklearn  and use the preprocessing.MinMaxScaler().
 
 
+<details>
+  <summary>Scaling</summary>
+
+To scale a dataset, you can run:
+
+```python
+x = df.values #returns a numpy array
+scaler = preprocessing.MinMaxScaler().fit(x)
+x = scaler.transform(x)
+df = pd.DataFrame(x)
+#To keep column names do
+#df[list(df.columns)] = scaler.transform(df)
+#instead of line 3 and 4
+#But we want to just have a numeric id for now, since it will help us later.
+```
+
+If you want to unscale, do:
+
+```python
+x = df.values #returns a numpy array
+x = scaler.inverse_transform(x)
+df = pd.DataFrame(x)
+df.head()
+```
+
+Tip: If you put the scaled dataset in df2, you can compare them easy.
+
+</details>
+
+After scaling the data, we can plot them together in a new scatter plot
+![scatter-scaled][scatter3]
 
 ## More hints
 
@@ -136,9 +179,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- images -->
 
 [corr]: img/corr.png
-[dfinfo]: img/dfinfo.png
-[df2info]: img/df2info.png
-[flightdata]: data/flight.csv
+[scatter1]: img/scatter1.png
+[scatter2]: img/scatter2.png
+[scatter3]: img/scatter3.png
+[scatterall]: img/scatterall.png
 
 <!-- documentation -->
 [pandas-doc]: https://pandas.pydata.org/docs/reference/index.html#api
@@ -159,6 +203,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [faker]: https://github.com/joke2k/faker
 [laundromat]: https://github.com/navikt/laundromat
 [frost]: https://frost.met.no/python_example.html
-
+[cmap]: https://matplotlib.org/stable/tutorials/colors/colormaps.html
 
 
