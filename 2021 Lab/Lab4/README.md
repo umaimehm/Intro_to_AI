@@ -18,7 +18,7 @@
 <h3 align="center">Dave3625 - Lab4</h3>
 <p align="center">
   <a href="https://github.com/umaimehm/Intro_to_AI_2021/tree/main/Lab4">
-    <img src="img/header.jpeg" alt="Linear Regression" width="auto" height="auto">
+    <img src="img/header.jpg" alt="Linear Regression" width="auto" height="auto">
   </a>
 
   
