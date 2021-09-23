@@ -165,6 +165,13 @@ plt.show()
 
 ```
 
+<details>
+  <summary>Show output</summary>
+
+![scatter-all][scatterall]
+
+  </details>
+
 ## More hints
 
 This section will be updated after the first lab session
