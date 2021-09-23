@@ -146,6 +146,7 @@ df.head()
 ```
 
 ![scaling][scale2]
+
 Tip: If you put the scaled dataset in df2, you can compare them easy.
 
 </details>
