@@ -49,17 +49,27 @@ We will be using [pandas][pandas-doc], [sklearn][sklearn-doc]
 
 ```python
 from sklearn import preprocessing
-# add as we go along
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
 ```
 
 <details>
   <summary>Click to show all imports</summary>
 
 ```python
+%matplotlib inline
+
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-%matplotlib inline
+
 from sklearn import preprocessing
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+#Yes, I like to sort imports based on length
+
 ```
 
 </details>
