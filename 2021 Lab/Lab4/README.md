@@ -134,6 +134,7 @@ df = pd.DataFrame(x)
 ```
 
 Output
+  
 ![scaling][scale1]
 
 If you want to unscale, do:
