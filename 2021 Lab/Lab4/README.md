@@ -147,7 +147,23 @@ Tip: If you put the scaled dataset in df2, you can compare them easy.
 </details>
 
 After scaling the data, we can plot them together in a new scatter plot
+
 ![scatter-scaled][scatter3]
+
+Lets make an another scatterplot where we plot each column against "Result" (or column 6 after scaling)
+
+```python
+#Scatterplot all columns against last column
+fig, ax = plt.subplots(df.shape[1]-1, figsize=(15, 15)) #Figsize ( lenght, height )
+for i in range(df.shape[1]-1):   #This loop is why we wanted to keep column name numeric, and not keep original names
+    
+    ax[i].scatter(x = df[i], y = df[6])
+    ax[i].set_xlabel("Column " + str(i))
+    ax[i].set_ylabel("Y")
+fig.tight_layout()
+plt.show()
+
+```
 
 ## More hints
 
