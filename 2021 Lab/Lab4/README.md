@@ -181,10 +181,15 @@ plt.show()
 
 ```
 
+
 <details>
   <summary>Show output</summary>
   
 ![scatter-combo][scatterall]
+
+If you compare this to the correlation plot, you'll identify the same columns having a relation
+
+![corrplot][corr]
   
   </details>
   
