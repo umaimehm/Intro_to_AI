@@ -24,7 +24,7 @@
   
 
   <p align="center">
-    Data Creation - Data anonymization - Timeseries<br \>
+    Training your first model<br \>
     <br />
     ·
     <a href="https://github.com/umaimehm/Intro_to_AI_2021/issues">Report Bug</a>
@@ -37,7 +37,7 @@
 <!-- ABOUT THE LAB -->
 ## About The Lab
 
-
+LAB TEXT
 
 
 
@@ -61,6 +61,9 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 from sklearn import preprocessing
 ```
+
+</details>
+
 
 ## Tasks
 **1. Read in data.csv, and look for correlation between rows**
