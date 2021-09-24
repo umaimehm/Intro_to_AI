@@ -118,6 +118,11 @@ From the matrix, we can see that Var1 and Result is highly correlated. We can al
 </details>
 
 We can also look at the correlation with scatterplots:
+
+```python
+df.plot.scatter(x = 'Var1', y = 'Result')
+```
+
 This is the column with the highest correlation with Result plotted against it:
 
 ![scatter-plot][scatter1]
@@ -292,6 +297,7 @@ We can now import data_test.csv and try the model on the entire set:
 ```python
 df2 = pd.read_csv(...) #Read testset into df
 ```
+First, create a new column with Var1 and Var3 *(call it Combines to use the code that follow)*
 
 Extract:
 	The combined value from df2 and put it in X
@@ -354,7 +360,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-First, create a new column with Var1 and Var3 *(call it Combines to use the code that follow)*
+
 
 ## More hints
 
