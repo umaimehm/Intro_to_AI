@@ -366,7 +366,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-
+...
 
 ## More hints
 
