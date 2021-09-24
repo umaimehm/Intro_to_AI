@@ -48,6 +48,7 @@ We will be using [pandas][pandas-doc], [sklearn][sklearn-doc]
 ## New imports
 
 ```python
+from sklearn import metrics
 from sklearn import preprocessing
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
@@ -64,6 +65,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from sklearn import metrics
 from sklearn import preprocessing
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
@@ -193,6 +195,64 @@ If you compare this to the correlation plot, you'll identify the same columns ha
   
   </details>
   
+## Let's train a model 
+
+In the task above, we found that Var1 and Var3 had a high correlation with the output. Let'a try to train a model on Var1 and evaluate the result.
+
+First let's split the set in a training and a testing set
+
+```python
+X = pd.DataFrame(df[0]) #Var1
+y = pd.DataFrame(df[6]) #Result
+
+#Now, split the set in training and testing set
+#test_size = 0.33 tell the function that 1/3 of values should be put in test arrat
+#Random state is a variable that seeds the random generator. In that way
+#you'll get the same training and testing set each run
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+```
+More on [train-test split][traintest]
+
+We now have 2/3 of the values in Var1 stored in X_train and 1/3 stored in X_test.
+You can now create a linear regressor model:
+
+```python
+linear_regressor = LinearRegression()  # create object for the class
+linear_regressor.fit(X_train, y_train)  # perform linear regression
+Y_pred = linear_regressor.predict(X_train)  # make predictions
+```
+To see the result, you can plot the prediction against the result column
+
+```python
+plt.scatter(X_train, y_train)             #Plot blue dots with real data
+plt.plot(X_train, Y_pred, color='red')    #Plot red line with prediction
+plt.show()                                #Show the plot
+print( "MSE = "+str(metrics.mean_squared_error(y_train,Y_pred))) #Calculate MSE
+```
+<details>
+  <summary>Show output</summary>
+
+![model 1][mod1]
+
+</details>
+
+Let's check how good our model works on the test data
+
+```python
+Y_pred = linear_regressor.predict(X_test)  # Predict the model on X_test
+plt.scatter(X_test, y_test)
+plt.plot(X_test, Y_pred, color='red')
+plt.show()
+print( "MSE = "+str(metrics.mean_squared_error(y_test,Y_pred)))
+```
+<details>
+  <summary>Show output</summary>
+
+![model 2][mod2]
+
+</details>
+
+By chance we got a lower error on the test set. This is good, because the lower MSE is, the more accurate is the model.
 
 ## More hints
 
@@ -231,6 +291,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [scatterall]: img/scatterall.PNG
 [scale1]: img/scale1.png
 [scale2]: img/scale2.png
+[mod1]: img/mod1.png
+[mod2]: img/mod2.png
 
 <!-- documentation -->
 [pandas-doc]: https://pandas.pydata.org/docs/reference/index.html#api
@@ -243,6 +305,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [feature-eng-tutorial]: https://github.com/PacktPublishing/Python-Feature-Engineering-Cookbook
 [pandas-cheatsheet]: https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
 [for-loop]: https://www.w3schools.com/python/python_for_loops.asp
+[traintest]: https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/
 
 <!-- links -->
 [api-key]: https://frost.met.no/auth/requestCredentials.html
