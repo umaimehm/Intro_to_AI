@@ -129,6 +129,12 @@ This is the column with the highest correlation with Result plotted against it:
 
 We can also plot more columns together, like this:
 
+```python
+ax1 = df.plot(kind='scatter', x='Var1', y='Result', color='r')    
+ax2 = df.plot(kind='scatter', x='Var2', y='Result', color='g', ax=ax1)    
+ax3 = df.plot(kind='scatter', x='Var3', y='Result', color='b', ax=ax1)
+```
+
 ![scatter-combo][scatter2]
 
 As we can see from this plot, different columns have different min/max values. To solve this we need to scale the columns to a given interval.
