@@ -7,7 +7,7 @@ Created on Thu Sep 23 10:11:55 2021
 
 import random
 
-file1 = open("data_test2.csv","w")
+file1 = open("data_test.csv","w")
 
 file1.write("Var1,Var2,Var3,Var4,Var5,Var6,Result\n")
 for i in range(100):
