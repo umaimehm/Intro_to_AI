@@ -119,6 +119,7 @@ From the matrix, we can see that Var1 and Result is highly correlated. We can al
 
 We can also look at the correlation with scatterplots:
 This is the column with the highest correlation with Result plotted against it:
+
 ![scatter-plot][scatter1]
 
 We can also plot more columns together, like this:
