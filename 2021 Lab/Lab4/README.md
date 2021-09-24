@@ -255,6 +255,107 @@ print( "MSE = "+str(metrics.mean_squared_error(y_test,Y_pred)))
 
 By chance we got a lower error on the test set. This is good, because the lower MSE is, the more accurate is the model.
 
+### Can we improve the output by creating a feature?
+
+As we discovered from the correlation plot, Var1 and Var3 was correlated with output. What happens if we create: Var7 = Var1 x Var3 
+*Remember Var1 = column 0, Var 3 = column 2*
+
+```python
+df[7] = df[0]*df[2]  #Create a new var, based on Var1 and Var3
+
+X = pd.DataFrame(df[7])  #Lets skip making train test set for now, and just
+Y = pd.DataFrame(df[6])  #load the entire dataset
+linear_regressor.fit(X, Y)  # perform linear regression
+Y_pred = linear_regressor.predict(X)  # make predictions
+plt.scatter(X, Y)
+plt.plot(X, Y_pred, color='red')
+plt.show()
+print( "MSE = "+str(metrics.mean_squared_error(Y,Y_pred)))
+```
+<details>
+  <summary>Show output</summary>
+
+![model 3][mod3]
+
+MSE = 0.4! That's impressive.
+
+</details>
+
+Now, lets manually check with the first row from data_test.csv
+
+```python
+                       # Var1 * Var3
+linear_regressor.predict([[95*63]]) #Expected output = 62.46
+```
+Seems like the model is working good with new data as well.
+We can now import data_test.csv and try the model on the entire set:
+```python
+df2 = pd.read_csv(...) #Read testset into df
+```
+
+Extract:
+	The combined value from df2 and put it in X
+	The result from df2 and put it in Y
+	df2 Var1 and put it in X1
+	df2 Var3 and put it in X2
+
+	column 7 from df and put it in Xt
+	column 0 from df and put it in X1t
+	column 2 from df and put it in X2t
+	column 6 from df and put it in Yt
+	and set:
+	dataSet = [X,X1,X2]
+	trainingSet = [Xt,X1t,X2t]
+
+<details>
+  <summary>Click to show code snippet</summary>
+
+```python
+#Set X to the combined set
+X = pd.DataFrame(df2["Combined"])
+#Y to result
+Y = pd.DataFrame(df2["Result"])
+#And make sets for Var1 and Var2
+X1 = pd.DataFrame(df2["Var1"])
+X2 = pd.DataFrame(df2["Var3"])
+
+#And lets do the same for the test set
+Xt = pd.DataFrame(df[7])
+X1t = pd.DataFrame(df[0])
+X2t = pd.DataFrame(df[2])
+Yt = pd.DataFrame(df[6])
+#Put the data in list, so we can test the different sets in a for loop
+dataSet = [X,X1,X2]
+trainingSet = [Xt,X1t,X2t]
+```
+
+
+</details>
+
+Now let's try to train the a model on Var1, Var3 and on Var1 x Var3
+
+```python
+fig, ax = plt.subplots(3, figsize=(15, 15)) #Figsize ( lenght, height )
+models = [] #List to save the different model for later use
+caps = ["Var1*Var2", "Var1", "Var2"] #Caption for the plots
+MSE = [] #list to save mean square error
+for i in range(3):  
+    linear_regressor = LinearRegression()  # create object for the class
+    linear_regressor.fit(trainingSet[i], Yt)  # perform linear regression
+    Y_pred = linear_regressor.predict(dataSet[i])  # make predictions
+    ax[i].scatter(dataSet[i], Y) #Plot blue dots from test set
+    ax[i].plot(dataSet[i], Y_pred, color='red') #Plot predicted from train
+    err=metrics.mean_squared_error(Y,Y_pred)
+    ax[i].set_xlabel(caps[i] + " MSE = " +str(err )) #Set caption
+    ax[i].set_ylabel("Y") #Set y lable
+    MSE.append(err) #Calculate and save mse for model
+    models.append(linear_regressor) #Save
+fig.tight_layout()
+plt.show()
+```
+
+First, create a new column with Var1 and Var3 *(call it Combines to use the code that follow)*
+
 ## More hints
 
 This section will be updated after the first lab session
@@ -294,6 +395,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [scale2]: img/scale2.png
 [mod1]: img/mod1.png
 [mod2]: img/mod2.png
+[mod3]: img/mod3.png
+[mod4]: img/mod4.png
 
 <!-- documentation -->
 [pandas-doc]: https://pandas.pydata.org/docs/reference/index.html#api
