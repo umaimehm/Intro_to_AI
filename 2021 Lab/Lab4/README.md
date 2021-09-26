@@ -268,6 +268,7 @@ By chance we got a lower error on the test set. This is good, because the lower 
 ### Can we improve the output by creating a feature?
 
 As we discovered from the correlation plot, Var1 and Var3 was correlated with output. What happens if we create: Var7 = Var1 x Var3 
+
 *Remember Var1 = column 0, Var 3 = column 2*
 
 ```python
@@ -301,6 +302,8 @@ Seems like the model is working good with new data as well.
 We can now import data_test.csv and try the model on the entire set:
 ```python
 df2 = pd.read_csv(...) #Read testset into df
+#Make a new column for Var1 * Var3
+df2["Combined"] = df2["Var1"]*df2["Var3"]
 ```
 First, create a new column with Var1 and Var3 *(call it Combines to use the code that follow)*
 
