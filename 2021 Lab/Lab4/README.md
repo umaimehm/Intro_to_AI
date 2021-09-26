@@ -37,9 +37,8 @@
 <!-- ABOUT THE LAB -->
 ## About The Lab
 
-LAB TEXT
-
-
+In this lab, we will train our first model using linear regression.
+The dataset used is created for this lab, and we will be able to identify a linear relationship between some variables and the result.
 
 We will be using [pandas][pandas-doc], [sklearn][sklearn-doc]
 
