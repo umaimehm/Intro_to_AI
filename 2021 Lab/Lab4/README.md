@@ -365,8 +365,61 @@ for i in range(3):
 fig.tight_layout()
 plt.show()
 ```
+We can now see how the choice of variable is closely connected with the models accuracy.
+
+![model 5][mod5]
+
+We can also check the models with some data not included in any of the sets:
+
+```python
+#Var1 = 79
+#Var2 = 135
+#Var3 = 36
+#Var4 = 62
+#Var5 = 6
+#Var6 = 14
+#Result = 31.61
+
+#Var1 * Var3
+v1=models[0].predict([[79*36]]) #Make a prediction on and store the result in V1
+#Var 1
+v2=models[1].predict([[79]])
+#Var3
+v3=models[1].predict([[36]])
+print(f"Prediction with:\nVar1*Var3 = {v1[0][0]}\nVar1 = {v2[0][0]}\nVar3 = {v3[0][0]}")
+print("Correct value = 31.61")
+```
+
+<details>
+  <summary>Output</summary>
+
+```
+Prediction with:
+Var1*Var3 = 30.950911117701498
+Var1 = 53.80770756065712
+Var3 = 25.79824010435377
+Correct value = 31.61
+```
+
+</details>
 
 
+## So we got a model, what now?
+
+We can now save the model. That way we can use it later without doing all the training of it again. 
+By using pickle we can easy save data to a file:
+
+```python
+import pickle
+# save the model to disk
+filename = 'my_model.sav' #Give it whatever name + extention you want
+pickle.dump(models[0], open(filename, 'wb'))
+
+##############################################################
+#Load the model again, and test to see if it works.
+loaded_model = pickle.load(open(filename, 'rb'))
+loaded_model.predict([[79*36]])
+```
 
 ## More hints
 
@@ -409,6 +462,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [mod2]: img/mod2.png
 [mod3]: img/mod3.png
 [mod4]: img/mod4.png
+[mod5]: img/threeMod.png
 
 <!-- documentation -->
 [pandas-doc]: https://pandas.pydata.org/docs/reference/index.html#api
