@@ -92,7 +92,7 @@ df = pd.read_csv(url)
 </details>
 
 Use pandas .corr() to create a correlation matrix.
-You can then plot the matrix to get a betre understanding for the data
+You can then plot the matrix to get a better understanding for the data
 
 <details>
   <summary>Hint</summary>
@@ -116,7 +116,7 @@ From the matrix, we can see that Var1 and Result is highly correlated. We can al
 
 </details>
 
-We can also look at the correlation with scatterplots:
+We can also look at the correlation with scatter plots:
 
 ```python
 df.plot.scatter(x = 'Var1', y = 'Result')
@@ -179,11 +179,11 @@ After scaling the data, we can plot them together in a new scatter plot
 
 ![scatter-scaled][scatter3]
 
-Lets make an another scatterplot where we plot each column against "Result" (or column 6 after scaling)
+Lets make an another scatter plot where we plot each column against "Result" (or column 6 after scaling)
 
 ```python
 #Scatterplot all columns against last column
-fig, ax = plt.subplots(df.shape[1]-1, figsize=(15, 15)) #Figsize ( lenght, height )
+fig, ax = plt.subplots(df.shape[1]-1, figsize=(15, 15)) #Figsize ( length, height )
 for i in range(df.shape[1]-1):   #This loop is why we wanted to keep column name numeric, and not keep original names
     
     ax[i].scatter(x = df[i], y = df[6])
@@ -208,7 +208,7 @@ If you compare this to the correlation plot, you'll identify the same columns ha
   
 ## Let's train a model 
 
-In the task above, we found that Var1 and Var3 had a high correlation with the output. Let'a try to train a model on Var1 and evaluate the result.
+In the task above, we found that Var1 and Var3 had a high correlation with the output. Let's try to train a model on Var1 and evaluate the result.
 
 First let's split the set in a training and a testing set
 
@@ -301,7 +301,7 @@ linear_regressor.predict([[95*63]]) #Expected output = 62.46
 Seems like the model is working good with new data as well.
 We can now import data_test.csv and try the model on the entire set:
 ```python
-df2 = pd.read_csv(...) #Read testset into df
+df2 = pd.read_csv(...) #Read test-set into df
 #Make a new column for Var1 * Var3
 df2["Combined"] = df2["Var1"]*df2["Var3"]
 ```
@@ -349,7 +349,7 @@ trainingSet = [Xt,X1t,X2t]
 Now let's try to train the a model on Var1, Var3 and on Var1 x Var3
 
 ```python
-fig, ax = plt.subplots(3, figsize=(15, 15)) #Figsize ( lenght, height )
+fig, ax = plt.subplots(3, figsize=(15, 15)) #Figsize ( length, height )
 models = [] #List to save the different model for later use
 caps = ["Var1*Var2", "Var1", "Var2"] #Caption for the plots
 MSE = [] #list to save mean square error
@@ -414,7 +414,7 @@ By using pickle we can easy save data to a file:
 ```python
 import pickle
 # save the model to disk
-filename = 'my_model.sav' #Give it whatever name + extention you want
+filename = 'my_model.sav' #Give it whatever name + extension you want
 pickle.dump(models[0], open(filename, 'wb'))
 
 ##############################################################
@@ -427,8 +427,8 @@ loaded_model.predict([[79*36]])
 
 This section will be updated after the first lab session
 
-## Usefull links
-You can find usefull information about feature engeneering [here][feature-eng-tutorial]
+## Useful links
+You can find useful information about feature engineering [here][feature-eng-tutorial]
 
 [pandas cheatsheet][pandas-cheatsheet]
 
