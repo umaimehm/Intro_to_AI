@@ -70,7 +70,9 @@ from scipy.cluster.vq import kmeans2, whiten
 
 
 ## Tasks
-**1. Read in the dataset from oslobysykkel, and look for correlation between rows**
+
+###1. Read in the dataset from oslobysykkel, and look for correlation between rows
+
 
 
 ```python
@@ -82,7 +84,8 @@ df = pd.read_csv(URL)
 df.head()
 ```
 
-**2. Preparing the data**
+###2. Preparing the data
+
 Since we have covered data preparation, you will be provided working code snippets.
 ```python
 #Getting only uniqe station ID's
@@ -149,7 +152,9 @@ coordinates= np.array(cor)
 ```
 
 We will now check two kmeans libraries
-***1: scipy.cluster.vq.kmeans2 ***
+
+###1: scipy.cluster.vq.kmeans2
+
 ```python
 #Run the algorithm
 #x = center of cluster
@@ -157,7 +162,8 @@ We will now check two kmeans libraries
 x, clust1 = kmeans2(whiten(coordinates), clusters, iter = 150)  
 ```
 
-***2: sklearn.cluster.KMeans ***
+###2: sklearn.cluster.KMeans
+
 ```python
 kmeans = KMeans(n_clusters=clusters, random_state=0, max_iter=150).fit(coordinates)
 clust2=kmeans.labels_
@@ -202,7 +208,8 @@ plot_cluster(clust3)
 
 This ends the machine learning part of the lab, but we will look at how we can represent the data we trained on, in a interactive map.
 
-**3 Visualize the data**
+##3 Visualize the data
+
 
 This is for those of you who want to dig deeper into data visualization, and not important for the course itself.
 
