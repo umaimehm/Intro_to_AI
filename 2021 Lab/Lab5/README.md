@@ -18,7 +18,7 @@
 <h3 align="center">Dave3625 - Lab5</h3>
 <p align="center">
   <a href="https://github.com/umaimehm/Intro_to_AI_2021/tree/main/Lab5">
-    <img src="img/header.jpg" alt="Linear Regression" width="auto" height="auto">
+    <img src="img/logo.jpg" alt="Linear Regression" width="auto" height="auto">
   </a>
 
   
@@ -47,10 +47,8 @@ We will be using [pandas][pandas-doc], [sklearn][sklearn-doc]
 ## New imports
 
 ```python
-from sklearn import metrics
-from sklearn import preprocessing
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
+from sklearn.cluster import KMeans
+from scipy.cluster.vq import kmeans2, whiten
 
 ```
 
@@ -64,13 +62,8 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
 from scipy.cluster.vq import kmeans2, whiten
-
-# For plotting on a real map
-from mapboxgl.viz import *
-from mapboxgl.utils import *
-from coloraide import Color
-
 ```
 
 </details>
@@ -189,6 +182,7 @@ and
 plot_cluster(clust2)
 ```
 This will produce something like:
+
 ![cluster plot][clustplot]
 
 The two plots might be identical, but you can play around with iter / max_iter to see how this affect the output.
@@ -228,7 +222,13 @@ pip3 install mapboxgl
 pip3 install coloraide
 conda install requests
 ```
-Within the same notebook we worked on in task 1 and 2, lets continue by assigning each station the cluster it belongs to. First choose what algorithm you want to plot from:
+Within the same notebook we worked on in task 1 and 2, lets continue by importing the new packages and assigning each station the cluster it belongs to. First choose what algorithm you want to plot from:
+
+```python
+from mapboxgl.viz import *
+from mapboxgl.utils import *
+from coloraide import Color
+```
 
 ```python
 #Cluster we want to go forward with
