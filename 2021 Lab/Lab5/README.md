@@ -84,7 +84,7 @@ df = pd.read_csv(URL)
 df.head()
 ```
 
-###2. Preparing the data
+***2. Preparing the data***
 
 Since we have covered data preparation, you will be provided working code snippets.
 ```python
