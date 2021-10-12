@@ -74,6 +74,7 @@ from scipy.cluster.vq import kmeans2, whiten
 **Seed data**
 
 **1. Read the data**
+
 Read the dataset found in ./data/seeds_dataset.txt
 You can still use pd.read_csv, but as sep you should use "\t"
 
@@ -136,6 +137,13 @@ and we can also compare it to the original labels
 df["result"]=result
 sns.pairplot(df, vars=df.columns[:-2], hue = "result", markers=["o", "s", "D"])
 ```
+
+<details>
+  <summary>Output</summary>
+
+![pair plot][pair]
+
+</details>
 
 **OsloBysykkel data**
 
@@ -406,6 +414,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [corr]: img/corr.png
 [clustplot]: img/clustplot.png
 [mapplot]: img/mapplot.png
+[pair]: img/pair.png
 
 <!-- documentation -->
 [pandas-doc]: https://pandas.pydata.org/docs/reference/index.html#api
